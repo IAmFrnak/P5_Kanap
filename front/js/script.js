@@ -1,6 +1,6 @@
 const url = "http://localhost:3000/api/products";
 
-async function fetchProducts() {
+async function fetchAllProducts() {
   try {
     const response = await fetch(url);
     console.log(response);
@@ -12,25 +12,25 @@ async function fetchProducts() {
   }
 }
 
-async function renderProducts() {
+async function displayAllProducts() {
   const itemsContainer = document.getElementById("items");
-  const products = await fetchProducts();
+  const products = await fetchAllProducts();
 
   products.forEach((product) => {
-    const productLinkElement = document.createElement("a");
+    const productLinkEl = document.createElement("a");
 
-    productLinkElement.setAttribute("href", `./product.html?id=${product._id}`);
+    productLinkEl.setAttribute("href", `./product.html?id=${product._id}`);
 
-    productLinkElement.innerHTML = `
+    productLinkEl.innerHTML = `
         <article>
             <img src="${product.imageUrl}" alt="${product.altTxt}">
             <h3 class="productName">${product.name}</h3>
-            <p class="productDescription">${product.description}</p>
+            <p class="productDescription> ${product.description}</p>
         </article>
 
 `;
-    itemsContainer.appendChild(productLinkElement);
+    itemsContainer.appendChild(productLinkEl);
   });
 }
 
-renderProducts();
+displayAllProducts();
