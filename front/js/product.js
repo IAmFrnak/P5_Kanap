@@ -45,24 +45,24 @@ async function fetchSingleProduct() {
     `;
 
     const colorSelect = document.getElementById('colors')
-    // const imgs = await fetchSingleProduct();
+    for (let i = 0; i < product.colors.length; i++) {
+      const colorOption = document.createElement('option');
+      colorOption.innerText = product.colors[i];
+      colorSelect.appendChild(colorOption);
+    }
+    
+    
+    
+    
+    // product.colors.forEach(productColors);
 
-    // imgs.forEach((img) => {
-    //     const imgEl = document.createElement('img');
-    //     const itemTitle = document.getElementById('title');
-    //     const itemPrice = document.getElementById('price');
-    //     const itemDescription = document.getElementById('description');
+    // function productColors(singleColor) {
+    //   colorSelect.innerHTML = `
+    //   <option value="">--Please, select a color --</option>
+    //   <option value=${singleColor}>${singleColor}</option>
 
-    //     imgEl.innerHTML = `
-    //     <img src="${img.imageUrl}" alt="${img.altTxt}">
-    //     `
-
-    //     itemTitle.innerText = `${img.name}`;
-    //     itemPrice.innerText = `${img.price}`;
-    //     itemDescription.innerText = `${img.description}`;
-    //     imgContainer.appendChild(imgEl);
-
-    // });
+    //   `
+    // }
   }
 
   displaySingleProduct();
