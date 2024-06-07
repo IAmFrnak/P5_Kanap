@@ -33,4 +33,6 @@ async function displayAllProducts() {
   });
 }
 
-displayAllProducts();
+
+
+document.addEventListener('DOMContentLoaded', displayAllProducts());

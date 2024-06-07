@@ -51,6 +51,10 @@ async function fetchSingleProduct() {
       colorSelect.appendChild(colorOption);
     }
     
+    const addToCart = document.getElementById('addToCart');
+    addToCart.addEventListener('click', ($event) =>{
+
+    })
     
     
     
