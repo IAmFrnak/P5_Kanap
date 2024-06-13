@@ -23,7 +23,7 @@ async function fetchSingleProduct() {
       console.log("Error");
     }
   }
-
+// async function that grabs the data from fetchSingleProduct
   async function displaySingleProduct() {
 
     const product = await fetchSingleProduct();
@@ -43,7 +43,7 @@ async function fetchSingleProduct() {
     imgContainer.innerHTML = `
     <img src= ${product.imageUrl} alt=${product.altTxt}>
     `;
-
+// Changes the color to match the variations of the sofas
     const colorSelect = document.getElementById('colors')
     for (let i = 0; i < product.colors.length; i++) {
       const colorOption = document.createElement('option');
